@@ -1,4 +1,4 @@
-package ru.yandex.architectureproject.ui.theme
+package ru.yandex.architectureproject.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

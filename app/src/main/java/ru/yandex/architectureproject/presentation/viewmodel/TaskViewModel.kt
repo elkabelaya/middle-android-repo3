@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -56,6 +57,7 @@ class TaskViewModel(
                         completeTaskUseCase(action.taskId)
                     } else {
                         taskForDeletionJobMap[action.taskId]?.cancel()
+                        taskForDeletionJobMap.remove(action.taskId)
                         incompleteTaskUseCase(action.taskId)
                     }
                 }
