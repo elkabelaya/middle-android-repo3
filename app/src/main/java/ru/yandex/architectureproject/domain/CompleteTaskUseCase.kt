@@ -7,6 +7,7 @@ class CompleteTaskUseCase(
 ) {
     suspend operator fun invoke(taskId: Int) {
         repository.completeTask(taskId)
-        // TODO: Здесь будет автоудаление задачи
+        // реализовано в строках 54-55 TaskViewModel,
+        // показалось более подходящим местом
     }
 }
